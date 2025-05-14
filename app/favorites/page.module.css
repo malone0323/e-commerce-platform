@@ -1,0 +1,426 @@
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--spacing-xl) 0 var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.favoriteStats {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.favoriteCount {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  background-color: var(--background-secondary);
+  padding: 4px 12px;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+}
+
+.emptyFavorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-3xl) 0;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.emptyFavoritesIcon {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background-color: var(--background-color);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}
+
+.emptyFavoritesTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.emptyFavoritesText {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+  max-width: 80%;
+}
+
+.favoritesContent {
+  margin-bottom: var(--spacing-3xl);
+}
+
+.controlsBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.controlsLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.controlsRight {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.viewToggle {
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color);
+  border-radius: var(--radius-md);
+  padding: 2px;
+  box-shadow: var(--shadow-sm);
+}
+
+.viewButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.viewButton.active {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.viewButton:hover:not(.active) {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-color);
+}
+
+.sortContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.sortLabel {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.selectWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.sortSelect {
+  appearance: none;
+  padding: 8px 36px 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--background-color);
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  min-width: 240px;
+}
+
+.sortSelect:hover,
+.sortSelect:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.1);
+}
+
+.selectArrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text-secondary);
+}
+
+.selectButton,
+.clearButton {
+  white-space: nowrap;
+}
+
+.selectButton.active {
+  background-color: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.selectionBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: rgba(230, 126, 34, 0.1);
+  border-left: 3px solid var(--accent-color);
+  border-radius: var(--radius-md);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.selectionInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.selectAllLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  user-select: none;
+}
+
+.selectAllCheckbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.selectedCount {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.removeSelectedButton {
+  background-color: var(--error-color);
+  border-color: var(--error-color);
+}
+
+.removeSelectedButton:hover:not(:disabled) {
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+
+.removeSelectedButton:disabled {
+  background-color: var(--text-secondary);
+  border-color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.favoritesList {
+  display: grid;
+  gap: var(--spacing-lg);
+  transition: all var(--transition-normal);
+}
+
+.gridView {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.listView {
+  grid-template-columns: 1fr;
+}
+
+.favoriteItem {
+  position: relative;
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-md);
+}
+
+.favoriteItem.selectMode {
+  cursor: pointer;
+}
+
+.favoriteItem.selected::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--accent-color);
+  border-radius: var(--radius-md);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.selectOverlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.checkbox.checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.quickRemoveButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  z-index: 5;
+  opacity: 0;
+}
+
+.favoriteItem:hover .quickRemoveButton {
+  opacity: 1;
+}
+
+.quickRemoveButton:hover {
+  background-color: var(--error-color);
+  color: white;
+  border-color: var(--error-color);
+}
+
+@media (max-width: 1024px) {
+  .controlsBar {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+  }
+
+  .controlsLeft,
+  .controlsRight {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sortContainer {
+    flex: 1;
+  }
+
+  .sortSelect {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .controlsLeft {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .viewToggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .viewButton {
+    flex: 1;
+  }
+
+  .selectionBar {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+  }
+
+  .selectionInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .removeSelectedButton {
+    width: 100%;
+  }
+
+  .gridView {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .controlsRight {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .selectButton,
+  .clearButton {
+    width: 100%;
+  }
+
+  .emptyFavoritesTitle {
+    font-size: var(--font-size-lg);
+  }
+}
